@@ -1,5 +1,4 @@
 import expect from 'expect';
-import { Point } from 'slate';
 
 export default function(plugin, change) {
     const { value } = change;
