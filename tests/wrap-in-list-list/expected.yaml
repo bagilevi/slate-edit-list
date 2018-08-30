@@ -10,7 +10,6 @@ document:
     - object: block
       type: ul_list
       nodes:
-
         - object: block
           type: list_item
           nodes:
