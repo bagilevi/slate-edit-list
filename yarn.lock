@@ -4281,13 +4281,13 @@ slate-react@^0.18.4:
     slate-plain-serializer "^0.6.2"
     slate-prop-types "^0.4.61"
 
-slate-schema-violations@^0.1.32:
+slate-schema-violations@^0.1.35:
   version "0.1.39"
   resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.39.tgz#854ab5624136419cef4c803b1823acabe11f1c15"
 
-slate@^0.37.0:
-  version "0.37.7"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.37.7.tgz#9623125164ada94d4f49ca2579682472697f5dde"
+slate@^0.38.0:
+  version "0.38.2"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.38.2.tgz#973c8e0b1f31f2fc5edfeaf4572ab5e04b58adcb"
   dependencies:
     debug "^3.1.0"
     direction "^0.1.5"
@@ -4296,7 +4296,7 @@ slate@^0.37.0:
     is-plain-object "^2.0.4"
     lodash "^4.17.4"
     slate-dev-logger "^0.1.43"
-    slate-schema-violations "^0.1.32"
+    slate-schema-violations "^0.1.35"
     type-of "^2.0.1"
 
 slice-ansi@1.0.0:
