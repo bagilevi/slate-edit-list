@@ -21,10 +21,9 @@ export default function(plugin, change) {
             offset: 0,
             path: [0, 0, 1, 1, 0, 0]
         },
-        isAtomic: false,
         isFocused: false,
         marks: null,
-        object: 'range'
+        object: 'selection'
     });
 
     return change;
