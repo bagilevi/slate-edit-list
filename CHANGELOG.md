@@ -8,9 +8,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [Unreleased]: https://github.com/bagilevi/slate-edit-list/compare/0.13.0...HEAD
 
-## 0.13.0 - 2018-08-30
+## 0.16.0 - 2018-11-11
 
-- Upgrade to be compatible with Slate 0.40.x
+- Merge v0.16.0 from https://github.com/katalysteducation/slate-edit-list
+  - Upgrade to be compatible with Slate 0.44.0
+
+## 0.13.0 - 2018-10-19
+
+- Forked from [GitbookIO/slate-edit-list](https://github.com/GitbookIO/slate-edit-list)
+- Upgrade to be compatible with Slate 0.35.x
+
 
 ## 0.12.1 - 2018-08-20
 

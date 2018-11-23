@@ -6,19 +6,18 @@ export default function(plugin, change) {
 
     change.moveToStartOfNode(selectedBlock).moveForward(2); // It|em 1
 
-    plugin.changes.splitListItem(change);
+    change.splitListItem();
 
-    // check new selection
     expect(change.value.selection.toJS()).toEqual({
         anchor: {
             object: 'point',
-            offset: 0,
-            path: [0, 0, 1, 1, 0, 0]
+            path: [0, 0, 1, 1, 0, 0],
+            offset: 0
         },
         focus: {
             object: 'point',
-            offset: 0,
-            path: [0, 0, 1, 1, 0, 0]
+            path: [0, 0, 1, 1, 0, 0],
+            offset: 0
         },
         isFocused: false,
         marks: null,
