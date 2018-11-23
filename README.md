@@ -1,16 +1,21 @@
-# slate-edit-list
-
-[![NPM version](https://badge.fury.io/js/slate-edit-list.svg)](http://badge.fury.io/js/slate-edit-list)
-[![Linux Build Status](https://travis-ci.org/GitbookIO/slate-edit-list.png?branch=master)](https://travis-ci.org/GitbookIO/slate-edit-list)
+# slate-edit-list - @bagilevi's fork
 
 A Slate plugin to handle keyboard events in lists. List items can contain blocks.
 
 Demo: [gitbookio.github.io/slate-edit-list/](https://gitbookio.github.io/slate-edit-list/)
 
+### About this Fork
+
+This fork is used by [Brahin](https://brahin.online/), my personal wiki software.
+I intend to keep this fork up-to-date with the latest Slate version, but this is a
+side project, so development might be slow.
+Also recommend [Katalyst Education](https://github.com/katalysteducation/slate-edit-list)'s
+fork, they've been doing a great job of migrating to new Slate versions.
+
 ### Install
 
 ```
-npm install slate-edit-list
+npm install @bagilevi/slate-edit-list
 ```
 
 ### Features
