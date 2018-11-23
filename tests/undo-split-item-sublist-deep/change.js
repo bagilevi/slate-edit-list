@@ -5,20 +5,13 @@ export default function(plugin, change) {
     const { value } = change;
     const { selection } = value;
 
-    const range = selection.merge({
-        anchor: new Point({
-            key: '_selection_key',
-            offset: 2
-        }),
-        focus: new Point({
-            key: '_selection_key',
-            offset: 2
-        })
-    });
+    const range = selection
+        .moveAnchorTo('_selection_key', 2)
+        .moveFocusTo('_selection_key', 2);
 
     change
         .select(range)
-        .call(plugin.changes.splitListItem)
+        .splitListItem()
         .undo();
 
     // TODO fix undo, and test selection
