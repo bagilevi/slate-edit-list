@@ -45,6 +45,8 @@ function renderNode(props: *) {
 }
 
 class Example extends React.Component<*, *> {
+    editor: Editor
+
     state = {
         value: INITIAL_VALUE
     };

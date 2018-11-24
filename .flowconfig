@@ -1,3 +1,6 @@
 [options]
 emoji=true
 esproposal.decorators=ignore
+
+[ignore]
+.*/node_modules/immutable/dist/immutable\.js\.flow
