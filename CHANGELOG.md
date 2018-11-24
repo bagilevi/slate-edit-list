@@ -3,12 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-
 ## [Unreleased]
 
-[Unreleased]: https://github.com/bagilevi/slate-edit-list/compare/0.13.0...HEAD
+[Unreleased]: https://github.com/bagilevi/slate-edit-list/compare/0.16.1...HEAD
 
-## 0.16.0 - 2018-11-11
+## 0.16.1 - 2018-11-21
+
+- Fix copy/cut of text within a list item (don't insert a list when pasting)
+
+## 0.16.0 - 2018-11-20
 
 - Merge v0.16.0 from https://github.com/katalysteducation/slate-edit-list
   - Upgrade to be compatible with Slate 0.44.0
