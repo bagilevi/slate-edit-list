@@ -4252,7 +4252,7 @@ slate-react-placeholder@^0.1.9:
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/slate-react-placeholder/-/slate-react-placeholder-0.1.9.tgz#683aaa4542c91b55552c51e4649d76ca778e14fb"
 
-"slate-react@>= 0.20.0 < 0.22.0":
+slate-react@0.21.12:
   version "0.21.12"
   resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.21.12.tgz#e3bee253324167ebb5185a6587c5450558575c23"
   dependencies:
@@ -4273,7 +4273,7 @@ slate-react-placeholder@^0.1.9:
     tiny-invariant "^1.0.1"
     tiny-warning "^0.0.3"
 
-"slate@>= 0.43 < 0.45.0":
+slate@0.44.6:
   version "0.44.6"
   resolved "https://registry.yarnpkg.com/slate/-/slate-0.44.6.tgz#47ab3127641bc1faa3e5a5b01bfab8861843c82e"
   dependencies:

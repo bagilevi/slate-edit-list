@@ -48,3 +48,10 @@ button.disabled {
     height: 100%;
     top: 0;
 }
+
+p {
+  /* Slate adds <br/> for empty paragraphs, which causes the height to be
+     different for empty vs. non-empty paragraphs, unless we set a fixed
+     height. */
+  line-height: 1em;
+}

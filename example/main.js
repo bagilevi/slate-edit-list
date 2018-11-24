@@ -14,8 +14,8 @@ const plugins = [plugin];
 
 function renderNode(props: *) {
     const { node, attributes, children, editor } = props;
-    const isCurrentItem = plugin.utils
-        .getItemsAtRange(editor.value)
+    const isCurrentItem = plugin.queries
+        .getItemsAtRange(editor, editor.value)
         .contains(node);
 
     switch (node.type) {
@@ -49,54 +49,47 @@ class Example extends React.Component<*, *> {
         value: INITIAL_VALUE
     };
 
+    ref = editor => {
+      this.editor = editor
+    }
+
     renderToolbar() {
-        const {
-            wrapInList,
-            unwrapList,
-            increaseItemDepth,
-            decreaseItemDepth
-        } = plugin.changes;
-        const inList = plugin.utils.isSelectionInList(this.state.value);
+        const { editor } = this;
+        const inList = editor && editor.isSelectionInList(this.state.value);
 
         return (
             <div>
                 <button
-                    className={inList ? 'active' : ''}
-                    onClick={() => this.call(inList ? unwrapList : wrapInList)}
+                    className={editor ? (inList ? 'active' : '') : 'disabled'}
+                    onClick={() => editor ? (inList ? editor.unwrapList() : editor.wrapInList()) : null}
                 >
                     <i className="fa fa-list-ul fa-lg" />
                 </button>
 
                 <button
                     className={inList ? '' : 'disabled'}
-                    onClick={() => this.call(decreaseItemDepth)}
+                    onClick={() => editor.decreaseItemDepth()}
                 >
                     <i className="fa fa-outdent fa-lg" />
                 </button>
 
                 <button
                     className={inList ? '' : 'disabled'}
-                    onClick={() => this.call(increaseItemDepth)}
+                    onClick={() => editor.increaseItemDepth()}
                 >
                     <i className="fa fa-indent fa-lg" />
                 </button>
 
                 <span className="sep">·</span>
 
-                <button onClick={() => this.call(wrapInList)}>
+                <button onClick={() => editor.wrapInList()}>
                     Wrap in list
                 </button>
-                <button onClick={() => this.call(unwrapList)}>
+                <button onClick={() => editor.unwrapList()}>
                     Unwrap from list
                 </button>
             </div>
         );
-    }
-
-    call(change) {
-        this.setState({
-            value: this.state.value.change().call(change).value
-        });
     }
 
     onChange = ({ value }) => {
@@ -110,15 +103,14 @@ class Example extends React.Component<*, *> {
             <div>
                 {this.renderToolbar()}
                 <Editor
+                    ref={this.ref}
                     placeholder={'Enter some text...'}
                     plugins={plugins}
                     value={this.state.value}
                     onChange={this.onChange}
+                    onFocus={null}
                     renderNode={renderNode}
-                    shouldNodeComponentUpdate={props =>
-                        // To update the highlighting of nodes inside the selection
-                        props.node.type === 'list_item'
-                    }
+
                 />
             </div>
         );
