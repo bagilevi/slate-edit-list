@@ -115,52 +115,58 @@ nodes:
                         text: Item 1.2
 ```
 
-### Utilities and Transform
-
-`slate-edit-list` exports utilities and transforms:
-
-#### `plugin.utils.isSelectionInList(value: Value) => Boolean`
-
-Return true if selection is inside a list (and it can be unwrap).
+### Utilities
 
 #### `plugin.utils.isList(node: Node) => Boolean`
 
 Return true if the node is one of the list type.
 
-#### `plugin.utils.getItemDepth(value: Value, block: Block?) => Number`
+### Queries
 
-Returns the depth of the current item (or the depth of the given block) in a list. 0 means not in a list.
-
-#### `plugin.utils.getCurrentItem(value: Value, block: Block?) => Block || Void`
+#### `editor.getCurrentItem(value: Value, block: Block?) => Block || Void`
 
 Returns the current item at selection (or at the given block).
 
-#### `plugin.utils.getCurrentList(value: Value, block: Block?) => Block || Void`
+#### `editor.getCurrentList(value: Value, block: Block?) => Block || Void`
 
 Returns the current list at selection (or at the given block).
 
-#### `plugin.utils.getItemsAtRange(value: Value, range: Selection?) => List<Node>`
+#### `editor.getItemDepth(value: Value, block: Block?) => Number`
+
+Returns the depth of the current item (or the depth of the given block) in a list. 0 means not in a list.
+
+#### `editor.getItemsAtRange(value: Value, range: Selection?) => List<Node>`
 
 Return the list of items at the given range. The returned items are the highest list of of successive items that cover the given range.
 
 The returned list is empty if no such list can be found.
 
-#### `plugin.changes.increaseItemDepth(change: Change) => Transform`
+#### `editor.getPreviousItem(value: Value, block: Block?) => Block || Void`
 
-Increase the depth of the current item.
+Return the previous item, from current selection or from a node.
 
-#### `plugin.changes.decreaseItemDepth(change: Change) => Transform`
+#### `editor.isSelectionInList(value: Value) => Boolean`
+
+Return true if selection is inside a list (and it can be unwrap).
+
+### Commands
+
+#### `editor.decreaseItemDepth() => Boolean`
 
 Decrease the depth of the current item.
 
-#### `plugin.changes.wrapInList(change: Change, type: String?, data: Object|Data?) => Transform`
+#### `editor.increaseItemDepth() => Boolean`
 
-Wrap the current blocks in list items of a list container of the given type. You can pass optional data for the created list container.
+Increase the depth of the current item.
 
-#### `plugin.changes.unwrapList(change: Change) => Transform`
+#### `editor.splitListItem() => Boolean`
+
+Split current block into a new list item.
+
+#### `editor.unwrapList() => Transform`
 
 Unwrap all items at range from their list.
 
-#### `plugin.changes.splitListItem(change: Change) => Transform`
+#### `editor.wrapInList(type: String?, data: Object|Data?) => Transform`
 
-Split current block into a new list item.
+Wrap the current blocks in list items of a list container of the given type. You can pass optional data for the created list container.
